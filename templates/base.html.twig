@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>{% block title %}Campination App{% endblock %}</title>
+   
+    {% block metas %}
+
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+
+
+        
+    {% endblock %}
+    {% block stylesheets %}
+
+
+   
+    <link rel="icon" type="image/png" href="{{ asset('assets/img/favicon1.png') }}" />
+
+    <link rel="stylesheet" href="{{ asset('assets/css/min/bootstrap.min.css') }}" media="all" >
+    <link rel="stylesheet" href="{{ asset('assets/css/jqueryui.css') }}" media="all" >
+    <link rel="stylesheet" href="{{ asset('vendor/animate-css/animate.css') }}" media="all" >
+    <link rel="stylesheet" href="{{ asset('assets/font/iconfont/iconstyle.css') }}" media="all" >
+    <link rel="stylesheet" href="{{ asset('assets/font/font-awesome/css/font-awesome.css') }}" media="all" >
+    <link rel="stylesheet" href="{{ asset('assets/css/main.css') }}" media="all"  id="maincss">
+
+   
+
+    <link href="{{ asset('assets/css/controlpanel.css') }}" rel="stylesheet">
+<link href="{{ asset('vendor/colpick-jQuery-Color-Picker-master/css/colpick.css" rel="stylesheet') }}"  type="text/css" />
+<link href="{{ asset('vendor/colorpicker/css/evol-colorpicker.min.css') }}" rel="stylesheet" type="text/css" />
+
+
+
+
+
+
+
+    {% endblock %}
+
+    {% block javascripts %}
+
+
+
+        <!-- START: Scripts -->
+
+        <script src="{{ asset('vendor/js-cookie/src/js.cookie.js') }}"></script>
+      
+        
+
+        <script>
+        (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+            (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+            m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+        })(window,document,'script','../www.google-analytics.com/analytics.js','ga');
+
+        ga('create', 'UA-83435216-1', 'auto');
+        ga('send', 'pageview');
+
+        </script>
+
+
+
+        <script src="{{ asset('vendor/colpick-jQuery-Color-Picker-master/js/colpick.js') }}"></script>
+          <script src="{{ asset('vendor/colorpicker/js/evol-colorpicker.min.js') }}"></script>
+          <script src="{{ asset('assets/js/controlpanel.js') }}"></script>
+
+	<!-- Current Page JS -->
+	<script src="{{ asset('assets/js/min/home.min.js') }}"></script>
+   
+    <script src="{{ asset('vendor/jquery/dist/jquery.min.js') }}"></script>
+   <script src="{{ asset('vendor/jqueryui/jquery-ui-1.10.3.custom.min.js') }}"></script>
+   <script src="{{ asset('vendor/jquery.ui.touch-punch.min.js') }}"></script>
+  <script src="{{ asset('vendor/bootstrap/dist/js/bootstrap.min.js') }}"></script>
+
+<script src="{{ asset('vendor/waypoints/lib/jquery.waypoints.min.js') }}"></script>
+<script src="{{ asset('vendor/owlcarousel/owl.carousel.min.js') }}"></script>
+<script src="{{ asset('vendor/retina.min.js') }}"></script>
+<script src="{{ asset('vendor/jquery.imageScroll.min.js') }}"></script>
+<script src="{{ asset('assets/js/min/responsivetable.min.js') }}"></script>
+<script src="{{ asset('assets/js/bootstrap-tabcollapse.js') }}"></script>
+
+<script src="{{ asset('assets/js/min/countnumbers.min.js') }}"></script>
+<script src="{{ asset('assets/js/main.js') }}"></script>
+{% endblock %}
+</head>
+<body>
+
+
+
+{% block navbar %}
+
+
+<nav class="navbar normal Black">
+  <div class="container-fluid">
+   <div class="navbar-header">
+    <a class="navbar-brand" href="index.html">
+      <img src="assets/img/logo2.png" alt="Logo">
+    </a>
+    <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#main-navbar">
+      <span class="sr-only">Basculer la navigation</span>
+      <span class="icon-bar"></span>
+      <span class="icon-bar"></span>
+      <span class="icon-bar"></span>
+    </button>
+  </div>
+
+  
+</div>
+</nav>
+
+
+
+{% endblock %}
+
+{% block body %}
+
+
+{% endblock %}
+
+
+
+
+
+</body>
+</html>

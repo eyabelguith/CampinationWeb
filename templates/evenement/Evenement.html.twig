@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<body>
+<table>
+<tr>
+<th>titre</th>
+<th>destination_e</th>
+<th>type_e</th>
+<th>description</th>
+<th>datedebut</th>
+<th>datefin</th>
+<th>participants</th>
+<th>Image</th>
+
+</tr>
+{% for co in evenements %}
+<tr>
+<td>{{co.titre}}</td>
+<td>{{co.destinationE}}</td>
+<td>{{co.typeE}}</td>
+<td>{{co.description}}</td>
+<td>{{co.datedebut|date}}</td>
+<td>{{co.datefin|date}}</td>
+<td>{{co.participants}}</td>
+<td>{{co.Image}}</td>
+
+</tr>
+{% endfor %}
+</table>
+</body>
+
+</html>

@@ -1,0 +1,488 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+        
+		<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<meta name="description" content="">
+		<meta name="author" content="">
+		<title>{% block title %}Campination App{% endblock %}</title>
+		<link rel="icon" type="image/png" href="{{ asset('assets/img/favicon1.png') }}" />
+	
+		<link rel="stylesheet" href="assets/css/min/bootstrap.min.css" media="all" >
+		<link rel="stylesheet" href="assets/css/jqueryui.css" media="all" >
+		<link rel="stylesheet" href="vendor/animate-css/animate.css" media="all" >
+		<link rel="stylesheet" href="assets/font/iconfont/iconstyle.css" media="all" >
+		<link rel="stylesheet" href="assets/font/font-awesome/css/font-awesome.css" media="all" >
+		<link rel="stylesheet" href="assets/css/main.css" media="all"  id="maincss">
+	
+		<script src="vendor/js-cookie/src/js.cookie.js"></script>
+		<style id="moldcustomize">
+		</style>
+	
+		<script>
+			(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+				(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+				m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+			})(window,document,'script','../www.google-analytics.com/analytics.js','ga');
+	
+			ga('create', 'UA-83435216-1', 'auto');
+			ga('send', 'pageview');
+	
+		</script>
+	</head>
+
+<body>
+	
+
+
+<header class="nav-menu fixed">
+ <nav class="navbar normal">
+  <div class="container-fluid">
+   <div class="navbar-header">
+    <a class="navbar-brand" href="index.html">
+		<img src="assets/img/logo2.png" alt="Logo">
+	  </a>
+    <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#main-navbar">
+      <span class="sr-only">Toggle navigation</span>
+      <span class="icon-bar"></span>
+      <span class="icon-bar"></span>
+      <span class="icon-bar"></span>
+    </button>
+  </div>
+
+  <div class="navbar-collapse collapse" id="main-navbar">
+     <ul class="nav navbar-nav">
+ 	<li class="dropdown">
+ 		<a href="#">Home Pages <i class="fa fa-chevron-down nav-arrow"></i></a>
+ 		<ul class="dropdown-menu">
+ 			<li><a href="home_default.html">Default Home Page</a></li>
+ 			<li><a href="home_slider.html">Image Slider Default</a></li>
+ 			<li><a href="home_slider_with_searhbar.html">Slider / Search Bar</a></li>
+ 			<li><a href="home_boxed.html">Boxed/Background Image</a></li>
+ 			<li><a href="home_video.html">Home with Video</a></li>
+ 		</ul>
+ 	</li>
+ 	<li class="dropdown">
+ 		<a href="#">Tour Pages</a>
+ 		<ul class="dropdown-menu">
+ 			<li><a href="trip_grid_withsidebar.html">Tour List</a></li>
+ 			<li><a href="trip_detail.html">Tour Detail</a></li>
+ 			<li><a href="location.html">Tour Location</a></li>
+ 			<li><a href="location_archive.html">Location Archive</a></li>
+ 		</ul>
+ 	</li>
+ 	<li class="dropdown">
+ 		<a href="#" class="dropdown-toggle">Features</a>
+ 		<ul class="dropdown-menu">
+ 			<li><a href="colorscheme.html">Color Scheme</a></li>
+ 			<li><a href="iconfont.html">Icon Font</a></li>
+ 			<li><a href="text_page.html">Typography</a></li>
+ 		</ul>
+ 	</li>
+ 	<li class="dropdown">
+ 		<a href="#" class="dropdown-toggle">Blog</a>
+ 		<ul class="dropdown-menu">
+ 			<li><a href="blog_list.html">Blog List</a></li>
+ 			<li><a href="blog_list2.html">Blog List Full Image</a></li>
+ 			<li><a href="blog_single.html">Blog Single</a></li>
+ 			<li><a href="blog_single_center.html">Blog Single Center</a></li>
+ 		</ul>
+ 	</li>
+ 	<li class="dropdown  megamenu">
+ 		<a class="dropdown-toggle">Mega Menu</a>
+ 		<div class="dropdown-menu">
+ 			<div class="col-sm-3">
+ 				<h5 class="head">Home Variation</h5>
+ 				<ul>
+ 					<li><a href="home_default.html">Default Home Page</a></li>
+ 					<li><a href="home_slider.html">Image Slider Default</a></li>
+ 					<li><a href="home_slider_with_searhbar.html">Slider / Search Bar</a></li>
+ 					<li><a href="home_boxed.html">Boxed/Background Image</a></li>
+ 					<li><a href="home_video.html">Home with Video</a></li>
+ 				</ul>
+ 			</div> 
+ 			<div class="col-sm-3">
+ 				<h5 class="head">Trip / Listing</h5>
+ 				<ul>
+ 					<li><a href="trip_detail.html">Trip Detail</a></li>
+ 					<li class="hor-line"></li>
+ 					<li><a href="trip_grid.html">Trip Grid</a></li>
+ 					<li><a href="trip_grid_withsidebar.html">Trip Grid with Sidebar</a></li>
+ 					<li><a href="trip_list.html">Trip List</a></li>
+ 					<li><a href="trip_list_full_img.html">Trip List - Full Image</a></li>
+ 					<li><a href="trip_list_2col.html">Trip List Two Column</a></li>
+ 				</ul>
+ 			</div>
+ 			<div class="col-sm-3">
+ 				<h5 class="head">Pages</h5>
+ 				<ul>
+ 					<li><a href="cart_page.html">Cart Page</a></li>
+ 					<li><a href="checkout_page.html">Checkout Page</a></li>
+ 					<li><a href="about_page.html">About Us Page</a></li>
+ 					<li><a href="team_page.html">Team Page</a></li>
+ 					<li><a href="contact_page.html">Contact Page</a></li>
+ 					<li><a href="contact_page2.html">Contact Page 2</a></li>
+ 				</ul>
+ 			</div>
+ 			<div class="col-sm-3">
+ 				<h5 class="head last">Misc Pages</h5>
+ 				<ul>
+ 					<li><a href="404_page.html">404 Page</a></li>
+ 					<li><a href="comming_soon.html">Comming Soon Page</a></li>
+ 					<li class="hor-line"></li>
+ 					<li><a href="login_page.html">Login Page</a></li>
+ 					<li><a href="signup_page.html">Sign Up Page</a></li>
+ 				</ul>
+ 			</div>
+ 		</div>
+ 	</li>
+ 	<li class="dropdown megamenu">
+ 		<a href="#" class="dropdown-toggle">Elements</a>
+ 		<div class="dropdown-menu">
+ 			<div class="col-sm-3">
+ 				<h5 class="head">Misc 1</h5>
+ 				<ul>
+ 					<li><a href="element_feature_list.html">Feature List</a></li>
+ 					<li><a href="element_heading.html">Heading / Titles</a></li> 					
+ 					<li><a href="element_banner.html">Banner</a></li>
+ 					<li><a href="element_blockquote.html">Blockquote</a></li>
+ 					<li><a href="element_breadcrumb.html">Breadcrumb</a></li>
+ 					<li><a href="element_pagination.html">Pagination</a></li>
+
+ 				</ul>
+ 			</div>
+ 			<div class="col-sm-3">
+ 				<h5 class="head">Misc 2</h5>
+ 				<ul>
+ 					<li><a href="element_carousel.html">Carousel</a></li>
+ 					<li><a href="element_gallery.html">Gallery &amp; Lightbox</a></li>
+ 					<li><a href="element_step-timeline.html">Steps / Timeline</a></li>
+ 					<li><a href="element_testimonials.html">Testimonials</a></li>
+ 					<li><a href="element_jquery_ui.html">Jquery UI</a></li>
+ 				</ul>
+ 			</div>
+ 			<div class="col-sm-3">
+ 				<h5 class="head">Animation / Form</h5>
+ 				<ul>
+ 					<li><a href="element_animation.html">Animation</a></li>
+ 					<li><a href="element_button.html">Button</a></li>
+ 					<li><a href="element_button_effect.html">Button Effect</a></li>
+ 					<li><a href="element_form.html">Form</a></li>
+ 					<li><a href="element_counter.html">Counter</a></li>
+
+ 				</ul>
+ 			</div> 
+ 			<div class="col-sm-3">
+ 				<h5 class="head">Tab / Table</h5>
+ 				<ul>
+ 					<li><a href="element_table.html">Table</a></li>
+ 					<li><a href="element_tooltip.html">Tooltip / Popover / Modal</a></li>
+ 					<li><a href="element_tabs.html">Tabs</a></li>
+ 					<li><a href="element_accordion.html">Accordion</a></li>
+ 					<li><a href="element_alert.html">Alert / Label</a></li>
+ 				</ul>
+ 			</div> 			
+ 		</div>
+ 	</li>
+ 	<li>  <a href="login_page.html"><span class="icon-user"></span>Sign In</a></li>
+ 	<li class="dropdown">
+ 		<a href="cart_page.html"><span class="icon-minicart"></span><span class="badge badge-danger">3</span></a>
+ 		<ul class="dropdown-menu  dropdown-menu-right cart-menu">
+ 			<li>
+ 				<img src="assets/img/trip_detail/thumb_1.jpg" alt="" class="item-img">
+ 				<span class="delete icon-trash"></span>
+ 				<div class="text">
+ 					Lorem ipsum dolor sit amet, consectetur.
+ 					<p>USD 473 X 2</p>
+ 				</div>
+ 			</li>
+ 			<li>
+ 				<img src="assets/img/trip_detail/thumb_2.jpg" alt="" class="item-img">
+ 				<span class="delete icon-trash"></span>
+ 				<div class="text">
+ 					Lorem ipsum dolor sit amet, consectetur.
+ 					<p>USD 473 X 2</p>
+ 				</div>
+ 			</li>
+ 			<li>
+ 				<img src="assets/img/trip_detail/thumb_4.jpg" alt="" class="item-img">
+ 				<span class="delete icon-trash"></span>
+ 				<div class="text">
+ 					Lorem ipsum dolor sit amet, consectetur.
+ 					<p>USD 473 X 2</p>
+ 				</div>
+ 			</li>
+ 		</ul>
+ 	</li>
+ </ul> 
+  </div>
+</div>
+</nav>
+</header>
+
+	<section class="page-img" style="background-image: url('assets/img/home_img/mountain.jpg');">
+		<div class="container">
+			<div class="col-sm-8">
+				<h1 class="main-head">Liste Des Evenement</h1>
+				
+			</div>
+			<div class="col-sm-4">
+				<ul class="breadcrumb">
+					<li><a href="#"><span class="icon-home"></span></a></li>
+					<li><a href="#">List</a></li>
+				</ul>
+			</div>
+			
+		</div>
+	</section>
+
+	<main>
+		<div class="container">
+			<div class="row">
+				<div class="col-sm-4">
+					
+<div class="sidebar">
+	<div class="border-box">
+		<div class="box-title">Recherche des événements</div>
+		<div class="input-group">
+			<input type="text" class="form-control" placeholder="Search Site">
+			<div class="input-group-btn">
+				<button class="btn btn-primary">Search</button>
+			</div>
+		</div>
+	</div>
+
+	<div class="border-box">
+		<div class="box-title">CHOISISSEZ UN Gouvernorat</div>
+		<select class="form-control selectpicker">
+			<option value="">Choose</option>
+		</select>
+	</div>
+
+	
+
+	
+
+	<div class="border-box">
+		<div class="box-title">Category</div>
+		<ul class="checklist">
+			<li><input type="checkbox"> All Style</li>
+			<li><input type="checkbox"> Trekking</li>
+			<li><input type="checkbox"> Hiking &amp; Sightseeing</li>
+			<li><input type="checkbox"> Relaxation</li>
+			<li><input type="checkbox"> Adventure</li>
+		</ul>
+	</div>
+
+	<div class="border-box">
+		<div class="box-title">Duration</div>
+		<div class="row">
+			<div class="col-sm-6">
+				<div class="form-group">
+					<label>Days</label>
+					<select class="form-control selectpicker">
+						<option value="">1</option>
+						<option value="">2</option>
+						<option value="">3</option>
+						<option value="">4</option>
+						<option value="">5</option>
+					</select>
+				</div>
+			</div>
+			<div class="col-sm-6">
+				<div class="form-group">
+					<label>Nights</label>
+					<select class="form-control selectpicker">
+						<option value="">1</option>
+						<option value="">2</option>
+						<option value="">3</option>
+						<option value="">4</option>
+						<option value="">5</option>
+					</select>
+				</div>
+			</div>
+		</div>
+	</div>
+
+</div>
+
+
+
+
+				</div>
+
+				<div class="col-sm-8">
+					
+					<div class="sort-wrap">
+						<div class="sort-title">20 Résultat correspondant</div>
+						<div class="toogle-view">
+							<a href="trip_list.html" class="icon icon-list active"></a>
+							<a href="trip_grid_withsidebar.html" class="icon icon-grid "></a>
+						</div>
+					</div>
+          {% for v in evenements %}
+					<div class="item-list">
+						<div class="col-sm-5">
+							<div class="item-img row" style="background-image: url('assets/img/trip_detail/thumb_1.jpg');">
+								<div class="item-overlay">
+									<a href="trip_detail.html"><span class="icon-binocular"></span></a>
+								</div>
+							</div>
+						</div>
+						<div class="col-sm-7">
+							<div class="item-desc">
+								<h5 class="item-title">{{v.titre}}</h5>
+								<div class="sub-title">
+									
+								</div>
+								<div class="item-excerpt">{{v.destinationE}}</div>
+
+								<div class="left"><span class="icon-calendar"></span>" 5 Days/3 Nights"</div>
+								<div class="right">
+									<a href="#" data-toggle="tooltip" data-placement="bottom" title="Ticket"><span class="icon-plane"></span></a>
+									<a href="#" data-toggle="tooltip" data-placement="bottom" title="Style - Camping"><span class="icon-tent"></span></a>
+								</div>
+							</div>
+							<div class="item-book">
+								<a href="{{ path('app_evenement_index2')}}" class="btn btn-primary hvr-sweep-to-right">Participer</a>
+
+								<div class="price">USD 121</div>
+							</div>
+						</div>
+					</div>
+					{% endfor %}
+				
+					<div class="pagination-wrap">
+	<span class="total">Total 127</span>
+	<nav class="pull-right">
+		<ul class="pagination">
+			<li class="page-item">
+				<a class="page-link" href="#" aria-label="First">First</a>
+			</li>
+			<li class="page-item"><a class="page-link" href="#">1</a></li>
+			<li class="page-item active"><a class="page-link" href="#">2</a></li>
+			<li class="page-item"><span class="page-link">..</span></li>
+			<li class="page-item"><a class="page-link" href="#">99</a></li>
+			<li class="page-item">
+				<a class="page-link" href="#" aria-label="Last">Last</a>
+			</li>
+		</ul>
+	</nav>
+	<div class="clearfix"></div>
+</div>
+
+
+
+				</div>
+
+			</div>
+		</div>
+	</main>
+
+
+	<footer id="footer">
+	<div class="container">
+		<div class="row">
+			<div class="col-sm-7 col-md-3">
+				<h3>Campination</h3>
+				<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Consequuntur, quia, architecto? A, reiciendis eveniet ! Esse est eaque adipisci natus rerum laudantium accusamus magni.</p>
+			</div>
+			<div class="col-sm-5 col-md-2">
+				<h3>Lien rapide</h3>
+				<ul>
+					<li>Forfait vacances</li>
+					<li>Aventure d'été</li>
+					<li>Bus et transport</li>
+					<li>Trek et Randonnées</li>
+				</ul>
+			</div>
+			<div class="col-sm-7 col-md-4">
+				<h3>Inscription à la newsletter</h3>
+				<p>Abonnez-vous à notre newsletter hebdomadaire pour recevoir des nouvelles et des mises à jour</p>
+				<br>
+				<div class="input-group">
+					<input type="text" class="form-control" placeholder="Votre Email">
+					<div class="input-group-btn">
+						<button class="btn btn-primary">S'abonner</button>
+					</div>
+				</div>
+			</div>
+			<div class="col-sm-5 col-md-2">
+				<h3>Informations de contact</h3>
+				<ul>
+					<li>CampinationTn</li>
+					<li>info@CampinationTn.com</li>
+				</ul>
+				<div class="clearfix">
+					<div class="social-icon-list">
+						<ul>
+							<li><a href="https://twitter.com/moldthemes" class="icon-twitter"></a></li>
+							<li><a href="mailto:info@moldthemes.com" class="icon-mail"></a></li>
+						</ul>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="copy"><span>&copy;</span> Copyright Mold Discover, 2017</div>
+</footer>
+
+<script src="vendor/jquery/dist/jquery.min.js"></script>
+<script src="vendor/jqueryui/jquery-ui-1.10.3.custom.min.js"></script>
+<script src="vendor/jquery.ui.touch-punch.min.js"></script>
+<script src="vendor/bootstrap/dist/js/bootstrap.min.js"></script>
+
+<script src="vendor/waypoints/lib/jquery.waypoints.min.js"></script>
+<script src="vendor/owlcarousel/owl.carousel.min.js"></script>
+<script src="vendor/retina.min.js"></script>
+<script src="vendor/jquery.imageScroll.min.js"></script>
+<script src="assets/js/min/responsivetable.min.js"></script>
+<script src="assets/js/bootstrap-tabcollapse.js"></script>
+
+<script src="assets/js/min/countnumbers.min.js"></script>
+<script src="assets/js/main.js"></script>
+
+
+<link href="assets/css/controlpanel.css" rel="stylesheet">
+<link href="vendor/colpick-jQuery-Color-Picker-master/css/colpick.css" rel="stylesheet"  type="text/css" />
+<link href="vendor/colorpicker/css/evol-colorpicker.min.css" rel="stylesheet" type="text/css" />
+
+<div class="control-panel">
+	<div class="panel-opener"><span class="icon-setting"></span> <span class="icon-cross"></span></div>
+	<div class="clearfix">
+		<form>
+			<div>
+				<label for="primary-color">Primary Color</label>
+				<input name="primary-color" id="primary-color" class="form-control" value="#558B2F"/>
+			</div>
+			<div>
+				<label for="base-color">Base Color</label>
+				<input name="base-color" id="base-color" class="form-control" value="#111111" style="border-color: #111111; width: 215px"/>
+			</div>
+			<div>
+				<label for="headfont">Head Font <span>Only Google Font</span></label>
+				<input name="headfont" id="headfont" class="form-control" value="Raleway"/>
+			</div>
+			<div>
+				<label for="bodyfont">Body Font <span>Only Google Font</span></label>
+				<input name="bodyfont" id="bodyfont" class="form-control" value="Open Sans"/>
+			</div>
+			<div class="clearfix">
+				<button id="hexrefresh" class="btn btn-default sweep-to-right" data-toggle="tooltip" data-placement="bottom" title="Reset" type="button"><span class="icon-sync"></span>Reset</button>
+				<button id="hexchange" class="btn btn-default sweep-to-right" data-toggle="tooltip" data-placement="bottom" title="Apply" type="button"><span class="icon-arrow-right"></span>Apply</button>
+			</div>
+		</form>
+	</div>
+</div>
+
+<script src="vendor/colpick-jQuery-Color-Picker-master/js/colpick.js"></script>
+<script src="vendor/colorpicker/js/evol-colorpicker.min.js"></script>
+<script src="assets/js/controlpanel.js"></script>
+
+	<!-- Current Page JS -->
+	<script src="assets/js/min/priceslider.min.js"></script>
+
+</body>
+</html>
