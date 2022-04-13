@@ -1,0 +1,27 @@
+<html>
+<body>
+<table>
+<tr>
+<th>nom</th>
+<th>prenom</th>
+<th>cin</th>
+<th>email</th>
+<th>login</th>
+<th>pwd</th>
+<th>gouvernorat</th>
+<th>type sport</th>
+<th> sexe</th>
+<th>num tel</th>
+</tr>
+{% for co in coa %}
+<tr>
+
+<td>{{co.nom}}</td>
+<td>{{co.prenom}}</td>
+
+</tr>
+{% endfor %}
+</table>
+</body>
+
+</html>
