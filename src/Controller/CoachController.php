@@ -2,7 +2,9 @@
 
 namespace App\Controller;
 use App\Entity\Coach;
+
 use App\Repository\CoachRepository;
+
 use App\Form\CoachType;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Response;
@@ -33,6 +35,18 @@ class CoachController extends AbstractController
 
 
     } 
+  /*
+        /**
+     * @Route("/showCoach/{id}", name="showCoach")
+     */
+  /*  public function showCoach($id)
+    {
+        $coach = $this->getDoctrine()->getRepository(Coach::class)->find($id);
+        $sorties= $this->getDoctrine()->getRepository(Sortiesportif::class)->listSortieByCoach($coach->getId());
+        return $this->render('coach/show.html.twig', [
+            "coach" => $coach,
+            "sorties"=>$sorties]);
+    }*/
      /**
      * @Route("/supp/{id}", name="supprimerc")
      */
@@ -66,7 +80,7 @@ class CoachController extends AbstractController
       $em=$this->getDoctrine()->getManager();
       $em->persist($coach);
       $em->flush();
-      $this->addFlash('success', $coach->getNom().'  est ajouté avec succee !');
+      $this->addFlash('info', $coach->getNom().'  est ajouté avec succee !');
    return $this->redirectToRoute('Listcoach');
    }
       return $this->render('coach/AjouterCoach.html.twig', [
@@ -74,7 +88,23 @@ class CoachController extends AbstractController
 
 
     }
-
-
+     /**
+     * @Route("/updateCoach/{id}", name="updateCoach")
+     */
+    public function updateCoach(Request $request,$id)
+    {
+        $coach = $this->getDoctrine()->getRepository(Coach::class)->find($id);
+        $form = $this->createForm(CoachType::class, $coach);
     
+        $form->handleRequest($request);
+        if ($form->isSubmitted()) {
+            
+            $em = $this->getDoctrine()->getManager();
+            $em->flush();
+            $this->addFlash('warning', $coach->getNom().'Coach est modifié avec succee !');
+            return $this->redirectToRoute('Listcoach');
+        }
+        return $this->render("coach/updateCoach.html.twig",array('form'=>$form->createView()));
+    }
+
 }

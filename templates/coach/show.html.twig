@@ -1,0 +1,19 @@
+<h4>Classroom:#{{ coach.id }}_{{ coach.name }}</h4>
+
+<h4>sortie de {{ coach.name }}</h4>
+<table border="1">
+    <tr>
+        <td>nom</td>
+        <td>Email</td>
+        <td>coach</td>
+        <td>Action</td>
+    </tr>
+    {% for s in sorties %}
+        <tr>
+            <td>{{ sorties.nom }}</td>
+            <td>{{ coach.email }}{{ coach.typeSport }}</td>
+            <td>{{ coach.nom }}</td>
+           
+        </tr>
+    {% endfor %}
+</table>

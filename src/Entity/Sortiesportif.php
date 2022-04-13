@@ -77,6 +77,11 @@ class Sortiesportif
      */
     private $destinations;
 
+    /**
+     * @ORM\ManyToOne(targetEntity=Coach::class, inversedBy="sorties")
+     */
+    private $coach;
+
 
 
     public function __construct()

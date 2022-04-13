@@ -1,8 +1,11 @@
 <?php
 
 namespace App\Entity;
-
+use App\Repository\TransporteurRepository;
+use Doctrine\Common\Collections\ArrayCollection;
+use Doctrine\Common\Collections\Collection;
 use Doctrine\ORM\Mapping as ORM;
+
 
 /**
  * Transporteur
@@ -84,10 +87,7 @@ class Transporteur
      */
     private $disponibilite;
 
-    /**
-     * @ORM\OneToOne(targetEntity=sortiesportif::class, cascade={"persist", "remove"})
-     */
-    private $sortieS;
+ 
 
     public function getIdT(): ?int
     {
@@ -202,17 +202,7 @@ class Transporteur
         return $this;
     }
 
-    public function getSortieS(): ?sortiesportif
-    {
-        return $this->sortieS;
-    }
-
-    public function setSortieS(?sortiesportif $sortieS): self
-    {
-        $this->sortieS = $sortieS;
-
-        return $this;
-    }
+ 
 
 
 }

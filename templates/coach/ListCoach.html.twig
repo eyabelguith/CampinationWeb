@@ -57,7 +57,7 @@
  		<a href="#">Gestion des Comptes<i class="fa fa-chevron-down nav-arrow"></i></a>
  		<ul class="dropdown-menu">
  			<li><a href="{{path('Listcoach')}}">Coach</a></li>
- 			<li><a href="{{path('Listcamper')}}">Coach</a></li>
+ 		
  			<li><a href="home_slider_with_searhbar.html">Transporteur</a></li>
  			
  		</ul>
@@ -72,7 +72,7 @@
  		</ul>
  	</li>
  	<li class="{{path('Listtransporteur')}}">
- 		<a href="#" class="dropdown-toggle">Transporteur</a>
+ 		<a href="{{path('Listtransporteur')}}" class="dropdown-toggle">Transporteur</a>
  		<ul class="dropdown-menu">
  			<li><a href="{{asset('discover.moldthemes.comcolorscheme.html')}}">Color Scheme</a></li>
  			<li><a href="iconfont.html">Icon Font</a></li>
@@ -243,9 +243,15 @@
 				<h1List Caoachs/h1>
 				
 			</div>
+			<p class="byline">
+						
+							<span class="dot">·</span>
+							<span class="icon-hiking" style="font-size:30px;">{{coach|length}} coachs</span>
+						</p>
 			
 						<div class="table-responsive-wrap">
 							<table class="table table-responsive">
+							
 								<thead>
 									<tr>
 										
@@ -267,8 +273,10 @@
 				  <td>	                    
 			<a href="{{path('supprimerc',{'id':c.id})}}"><span class="icon-cross hvr-pop" style="font-size: 40px;"></span></a>
 			<a href="{{path('updateCoach',{'id':c.id})}}"><span class="icon-pencil hvr-pop" style="font-size: 40px;"></span></a>
+			
 			</td>
 									</tr>
+									
 									{%endfor%}
 								</tbody>
 							</table>

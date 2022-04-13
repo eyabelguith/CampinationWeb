@@ -57,18 +57,18 @@ $camper = $this->getDoctrine()->getRepository(Camper::class)->find($idCamper);
 $em = $this->getDoctrine()->getManager();
 $em->remove($camper);
 $em->flush();
-$this->addFlash('info', 'Camper deleted succesfuly !');
+$this->addFlash('infoo', 'Camper deleted succesfuly !');
 return $this->redirectToRoute('Listcamper');
     }
     
     /**
      * @Route("/updateCamper/{idCamper}", name="updateCamper")
      */
-    public function updateClassroom(Request $request,$idCamper)
+    public function updateCamper(Request $request,$idCamper)
     {
         $camper = $this->getDoctrine()->getRepository(Camper::class)->find($idCamper);
         $form = $this->createForm(CamperType::class, $camper);
-        $form->add('modifier',SubmitType::class);
+  
         $form->handleRequest($request);
         if ($form->isSubmitted()) {
             
@@ -101,7 +101,7 @@ return $this->redirectToRoute('Listcamper');
       $em->persist($camper);
       $em->flush();
       $this->addFlash('success', 'Camperaddes succesfuly !');
-   return $this->redirectToRoute('Listcamper');
+   return $this->redirectToRoute('SignUP');
    }
       return $this->render('camper/SignUp.html.twig', [
             'formA' => $form->createView() ]);

@@ -26,14 +26,14 @@ class Coach
 
     /**
      * @var string
-     *
+     *@Assert\NotBlank(message="Vueillez remplir le champ")
      * @ORM\Column(name="nom", type="string", length=10, nullable=false)
      */
     private $nom;
 
     /**
      * @var string
-     *
+     **@Assert\NotBlank(message="Vueillez remplir le champ")
      * @ORM\Column(name="prenom", type="string", length=10, nullable=false)
      */
     private $prenom;
@@ -47,50 +47,50 @@ class Coach
 
     /**
      * @var string
-     *
+     *@Assert\NotBlank(message="Vueillez remplir le champ")
      * @ORM\Column(name="email", type="string", length=30, nullable=false)
      */
     private $email;
 
     /**
      * @var string
-     *
+     *@Assert\NotBlank(message="Vueillez remplir le champ")
      * @ORM\Column(name="login", type="string", length=100, nullable=false)
      */
     private $login;
 
     /**
      * @var string
-     *
+     *@Assert\NotBlank(message="Vueillez remplir le champ")
      * @ORM\Column(name="pwd", type="string", length=10, nullable=false)
      */
     private $pwd;
 
     /**
      * @var string
-     *
+     *@Assert\NotBlank(message="Vueillez remplir le champ")
      * @ORM\Column(name="gouvernorat", type="string", length=20, nullable=false)
      */
     private $gouvernorat;
 
     /**
      * @var int
-     *
+     *@Assert\NotBlank(message="Vueillez remplir le champ")
      * @ORM\Column(name="cinCO", type="integer", nullable=false)
      */
     private $cinco;
 
     /**
      * @var string
-     *
+    
      * @ORM\Column(name="sexe", type="string", length=10, nullable=false)
      */
     private $sexe;
 
     /**
      * @var string
-     *
-     * @ORM\Column(name="type_sport", type="string", length=50, nullable=false)
+     **@Assert\NotBlank(message="Vueillez remplir le champ")
+     * @ORM\Column(name="type_sport", type="string", length=20, nullable=false)
      */
     private $typeSport;
 

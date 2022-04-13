@@ -73,4 +73,15 @@ class SortiesportifRepository extends ServiceEntityRepository
         ;
     }
     */
+
+    public function listSortieByCoach($id)
+    {
+        return $this->createQueryBuilder('s')
+            ->join('s.coach', 'c')
+            ->addSelect('c')
+            ->where('c.id=:id')
+            ->setParameter('id',$id)
+            ->getQuery()
+            ->getResult();
+    }
 }

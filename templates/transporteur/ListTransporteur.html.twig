@@ -38,36 +38,34 @@
 {% endblock %}
 {% block body %}
 <body >
-
 <header class="nav-menu fixed">
-    <nav class="navbar normal">
-     <div class="container-fluid">
-       <div class="navbar-header">
-           <a class="navbar-brand" href="index.html">
+ <nav class="navbar normal">
+  <div class="container-fluid">
+   <div class="navbar-header">
+      <a class="navbar-brand" href="index.html">
              <img src="{{asset('discover.moldthemes.com/assets/img/logo2.png')}}" alt="Logo">
            </a>
-       <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#main-navbar">
-         <span class="sr-only">Toggle navigation</span>
-         <span class="icon-bar"></span>
-         <span class="icon-bar"></span>
-         <span class="icon-bar"></span>
-       </button>
-     </div>
+    <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="main-navbar">
+      <span class="sr-only">Toggle navigation</span>
+      <span class="icon-bar"></span>
+      <span class="icon-bar"></span>
+      <span class="icon-bar"></span>
+    </button>
+  </div>
 
   <div class="navbar-collapse collapse" id="main-navbar">
      <ul class="nav navbar-nav">
  	<li class="dropdown">
- 		<a href="#">Home Pages <i class="fa fa-chevron-down nav-arrow"></i></a>
+ 		<a href="{{path('Listcoach')}}">Coach<i class="fa fa-chevron-down nav-arrow"></i></a>
  		<ul class="dropdown-menu">
- 			<li><a href="home_default.html">Default Home Page</a></li>
- 			<li><a href="home_slider.html">Image Slider Default</a></li>
- 			<li><a href="home_slider_with_searhbar.html">Slider / Search Bar</a></li>
- 			<li><a href="home_boxed.html">Boxed/Background Image</a></li>
- 			<li><a href="home_video.html">Home with Video</a></li>
+ 			<li><a href="{{path('Listcoach')}}">Coach</a></li>
+ 		
+ 			<li><a href="home_slider_with_searhbar.html">Transporteur</a></li>
+ 			
  		</ul>
  	</li>
  	<li class="dropdown">
- 		<a href="#">Tour Pages</a>
+ 		<a href="{{path('Listcamper')}}">Campers</a>
  		<ul class="dropdown-menu">
  			<li><a href="trip_grid_withsidebar.html">Tour List</a></li>
  			<li><a href="trip_detail.html">Tour Detail</a></li>
@@ -75,16 +73,16 @@
  			<li><a href="location_archive.html">Location Archive</a></li>
  		</ul>
  	</li>
- 	<li class="dropdown">
- 		<a href="#" class="dropdown-toggle">Features</a>
+ 	<li class="{{path('Listtransporteur')}}">
+ 		<a href="{{path('Listtransporteur')}}" class="dropdown-toggle">Transporteur</a>
  		<ul class="dropdown-menu">
- 			<li><a href="colorscheme.html">Color Scheme</a></li>
+ 			<li><a href="{{asset('discover.moldthemes.comcolorscheme.html')}}">Color Scheme</a></li>
  			<li><a href="iconfont.html">Icon Font</a></li>
  			<li><a href="text_page.html">Typography</a></li>
  		</ul>
  	</li>
  	<li class="dropdown">
- 		<a href="#" class="dropdown-toggle">Blog</a>
+ 		<a href="#" class="dropdown-toggle">Destination</a>
  		<ul class="dropdown-menu">
  			<li><a href="blog_list.html">Blog List</a></li>
  			<li><a href="blog_list2.html">Blog List Full Image</a></li>
@@ -93,7 +91,7 @@
  		</ul>
  	</li>
  	<li class="dropdown  megamenu">
- 		<a class="dropdown-toggle">Mega Menu</a>
+ 		<a class="dropdown-toggle">Evenement</a>
  		<div class="dropdown-menu">
  			<div class="col-sm-3">
  				<h5 class="head">Home Variation</h5>
@@ -106,7 +104,7 @@
  				</ul>
  			</div> 
  			<div class="col-sm-3">
- 				<h5 class="head">Trip / Listing</h5>
+ 				<h5 class="head">Sortie sportif / Sortie balade</h5>
  				<ul>
  					<li><a href="trip_detail.html">Trip Detail</a></li>
  					<li class="hor-line"></li>
@@ -118,7 +116,7 @@
  				</ul>
  			</div>
  			<div class="col-sm-3">
- 				<h5 class="head">Pages</h5>
+ 				<h5 class="head">VIP</h5>
  				<ul>
  					<li><a href="cart_page.html">Cart Page</a></li>
  					<li><a href="checkout_page.html">Checkout Page</a></li>
@@ -129,7 +127,7 @@
  				</ul>
  			</div>
  			<div class="col-sm-3">
- 				<h5 class="head last">Misc Pages</h5>
+ 				<h5 class="head last">Magasin</h5>
  				<ul>
  					<li><a href="404_page.html">404 Page</a></li>
  					<li><a href="comming_soon.html">Comming Soon Page</a></li>
@@ -188,12 +186,12 @@
  			</div> 			
  		</div>
  	</li>
- 	<li>  <a href="login_page.html"><span class="icon-user"></span>Sign In</a></li>
+ 	<li>  <a href="login_page.html"><span class="icon-user"></span>Logout</a></li>
  	<li class="dropdown">
  		<a href="cart_page.html"><span class="icon-minicart"></span><span class="badge badge-danger">3</span></a>
  		<ul class="dropdown-menu  dropdown-menu-right cart-menu">
  			<li>
- 				<img src="{{asset('discover.moldthemes.comassets/img/trip_detail/thumb_1.jpg')}}" alt="" class="item-img">
+ 				<img src="assets/img/trip_detail/thumb_1.jpg" alt="" class="item-img">
  				<span class="delete icon-trash"></span>
  				<div class="text">
  					Lorem ipsum dolor sit amet, consectetur.
@@ -201,7 +199,7 @@
  				</div>
  			</li>
  			<li>
- 				<img src="{{asset('discover.moldthemes.com/assets/img/trip_detail/thumb_2.jpg')}}" alt="" class="item-img">
+ 				<img src="assets/img/trip_detail/thumb_2.jpg" alt="" class="item-img">
  				<span class="delete icon-trash"></span>
  				<div class="text">
  					Lorem ipsum dolor sit amet, consectetur.
@@ -209,7 +207,7 @@
  				</div>
  			</li>
  			<li>
- 				<img src="{{asset('discover.moldthemes.com/assets/img/trip_detail/thumb_4.jpg')}}" alt="" class="item-img">
+ 				<img src="assets/img/trip_detail/thumb_4.jpg" alt="" class="item-img">
  				<span class="delete icon-trash"></span>
  				<div class="text">
  					Lorem ipsum dolor sit amet, consectetur.
@@ -253,7 +251,11 @@
         {% endfor %}
 <section class="white">
 		<div class="container">
-
+	<p class="byline">
+						
+				<span class="dot">·</span>
+				<span class="icon-jeep" style="font-size:30px;">{{trans|length}} Transporteurs</span>
+			</p>
 			<div class="main-title">
 				<h1List Camper</h1>
 				
@@ -271,7 +273,7 @@
                       <th>Moyen de Transport</th>
                       <th>Disponibilité</th>
                       <td>Capacité</td>
-						
+						<td>Action</td>
 						</tr>
 					</thead>
 					<tbody>
@@ -284,7 +286,10 @@
 								<td>{{c.moyent}}</td>
 								<td>{{c.disponibilite}}</td>
                                 <td>{{c.capacite}}</td>
-	
+		<td>
+<span class="icon-cross hvr-pop" style="font-size: 40px;"></span></a>
+<span class="icon-pencil hvr-pop" style="font-size: 40px;"></span></a>
+</td>
 
 						</tr>
 						{%endfor%}

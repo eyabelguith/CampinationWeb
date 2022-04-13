@@ -8,11 +8,13 @@ use Doctrine\Common\Collections\Collection;
 use Doctrine\ORM\Mapping as ORM;
 use Symfony\Component\HttpFoundation\File\File;
 use Symfony\Component\Validator\Constraints\Image;
+use Symfony\Bridge\Doctrine\Validator\Constraints\UniqueEntity;
 
 /**
  * Camper
  *
  * @ORM\Table(name="camper")
+ * @UniqueEntity(fields={"email"}, message="There is already an account with this email")
  * @ORM\Entity(repositoryClass=CamperRepository::class)
 
  */

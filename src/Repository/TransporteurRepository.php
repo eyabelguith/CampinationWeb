@@ -2,30 +2,30 @@
 
 namespace App\Repository;
 
-use App\Entity\Coach;
+use App\Entity\Transporteur;
 use Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepository;
 use Doctrine\ORM\OptimisticLockException;
 use Doctrine\ORM\ORMException;
 use Doctrine\Persistence\ManagerRegistry;
 
 /**
- * @method Coach|null find($id, $lockMode = null, $lockVersion = null)
- * @method Coach|null findOneBy(array $criteria, array $orderBy = null)
- * @method Coach[]    findAll()
- * @method Coach[]    findBy(array $criteria, array $orderBy = null, $limit = null, $offset = null)
+ * @method Transporteur|null find($id, $lockMode = null, $lockVersion = null)
+ * @method Transporteur|null findOneBy(array $criteria, array $orderBy = null)
+ * @method Transporteur[]    findAll()
+ * @method Transporteur[]    findBy(array $criteria, array $orderBy = null, $limit = null, $offset = null)
  */
-class CoachRepository extends ServiceEntityRepository
+class TransporteurRepository extends ServiceEntityRepository
 {
     public function __construct(ManagerRegistry $registry)
     {
-        parent::__construct($registry, Coach::class);
+        parent::__construct($registry, Transporteur::class);
     }
 
     /**
      * @throws ORMException
      * @throws OptimisticLockException
      */
-    public function add(Coach $entity, bool $flush = true): void
+    public function add(Transporteur $entity, bool $flush = true): void
     {
         $this->_em->persist($entity);
         if ($flush) {
@@ -37,7 +37,7 @@ class CoachRepository extends ServiceEntityRepository
      * @throws ORMException
      * @throws OptimisticLockException
      */
-    public function remove(Coach $entity, bool $flush = true): void
+    public function remove(Transporteur $entity, bool $flush = true): void
     {
         $this->_em->remove($entity);
         if ($flush) {
@@ -46,15 +46,15 @@ class CoachRepository extends ServiceEntityRepository
     }
 
     // /**
-    //  * @return Coach[] Returns an array of Coach objects
+    //  * @return Transporteur[] Returns an array of Transporteur objects
     //  */
     /*
     public function findByExampleField($value)
     {
-        return $this->createQueryBuilder('c')
-            ->andWhere('c.exampleField = :val')
+        return $this->createQueryBuilder('t')
+            ->andWhere('t.exampleField = :val')
             ->setParameter('val', $value)
-            ->orderBy('c.id', 'ASC')
+            ->orderBy('t.id', 'ASC')
             ->setMaxResults(10)
             ->getQuery()
             ->getResult()
@@ -63,15 +63,15 @@ class CoachRepository extends ServiceEntityRepository
     */
 
     /*
-    public function findOneBySomeField($value): ?Coach
+    public function findOneBySomeField($value): ?Transporteur
     {
-        return $this->createQueryBuilder('c')
-            ->andWhere('c.exampleField = :val')
+        return $this->createQueryBuilder('t')
+            ->andWhere('t.exampleField = :val')
             ->setParameter('val', $value)
             ->getQuery()
             ->getOneOrNullResult()
         ;
     }
     */
-  
+
 }
