@@ -1,0 +1,28 @@
+<html>
+<body>
+<table>
+
+<tr>
+<th>id_DestinationS</th>
+<th>date_depart</th>
+<th>date_retour</th>
+<th>cinT</th>
+<th>nom_S</th>
+</tr>
+
+ {% for s in ss %}
+                    <tr>
+                        <td>{{s.idDestinations}}</td>
+                        <td>{{s.dateDepart|date}}</td>
+                         <td>{{s.dateRetour|date}}</td>
+                           <td>{{s.cint}}</td>
+                             <td>{{s.typeSport}}</td>
+                          <td>{{s.cinco}}</td>
+                           <td>{{s.nomS}}</td>
+                    </tr>
+                    {% endfor %}
+
+
+</table>
+</body>
+</html>
