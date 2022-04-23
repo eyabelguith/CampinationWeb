@@ -73,4 +73,15 @@ class SortiebaladeRepository extends ServiceEntityRepository
         ;
     }
     */
+
+
+
+    public function DbyS($idDestinationb){ // l id clé
+    return $this->QueryBuilder('s') // alais s fait reference a l'entity student 
+    ->join('s.Sortiebalade','c')// s.classroom attribut de l'entité student c lalias de lentite classroom JOIN  element de jointure
+    ->where('c.idDestinationb=:idDestinationb') //:id c'est lid de lentité student
+    ->setParameter('idDestinationb',$idDestinationb) 
+    ->getQuery()
+    ->getResult();
+    }
 }

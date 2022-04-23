@@ -35,6 +35,7 @@ class Sortiebalade
      * @var \DateTime
      *@Assert\NotBlank(message="Vueiller remplir les champs")
      * @ORM\Column(name="date_depart", type="date", nullable=false)
+     * @Assert\GreaterThan("today")
      */
     private $dateDepart;
 
@@ -42,12 +43,15 @@ class Sortiebalade
      * @var \DateTime
      *@Assert\NotBlank(message="Vueiller remplir les champs")
      * @ORM\Column(name="date_retour", type="date", nullable=false)
+     * @Assert\GreaterThan("today")
+     * @Assert\Expression("this.getDateDepart() < this.getDateRetour()",message="La date fin ne doit pas être antérieure à la date début")
      */
     private $dateRetour;
 
     /**
      * @var int
-     *
+     *@Assert\Length(min=6 , minMessage = "le cin de transporteur faut etre 6 au minimum")
+     
      * @ORM\Column(name="cinT", type="integer", nullable=false)
      */
     private $cint;
@@ -56,11 +60,13 @@ class Sortiebalade
      * @var string
      *@Assert\NotBlank(message="Vueiller remplir les champs")
      * @ORM\Column(name="nom_S", type="string", length=100, nullable=false)
+     * @Assert\Unique
      */
     private $nomS;
 
     /**
      * @ORM\ManyToMany(targetEntity=Camper::class)
+     * 
      */
     private $ListeCamper;
 
