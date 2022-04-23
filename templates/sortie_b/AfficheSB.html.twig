@@ -245,9 +245,26 @@
 
 
             <table class="table table-responsive">
-               <tbody>
+               <tbody id="myTable">
                    
-
+				<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js
+				"></script>
+				<script>
+				$(document).ready(function(){
+				  $("#myInput").on("keyup", function() {
+					var value = $(this).val().toLowerCase();
+					$("#myTable tr").filter(function() {
+					  $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)
+					});
+				  });
+				});
+				</script>
+				<div class="input-group">
+					<br><br>	<p style="margin-left: 2.3em;padding: 0 0.09em 2.6em 0;border-width: 5px; border-color: #558B2F; border-style:solid;">	<input id="myInput" type="text"placeholder="Rechercher.." class="form-control"></p>
+										<br>
+									</div>
+							  
+			  
 <tr>
 <th>Nom du sortie</th>
 <th>reference de distination</th>
@@ -278,13 +295,11 @@
             </table>
 			<center>{{ knp_pagination_render(sb) }} </center>	
 
-  <h4><a href="{{ path('pdf') }}"  >imprimer</a></h4>
+  <h4><a href="{{ path('pdf') }}"  > <span class="icon-printer" style="font-size: 40px;"></span></a></h4>
       
 
 
-   
-
-
+ 
 
 <section>
     <div class="showcase" style=" background: url('discover.moldthemes.com/assets/img/worldmap.png') no-repeat center; background-size: cover ">

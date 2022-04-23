@@ -288,8 +288,25 @@
 			<center><span class=" icon-binocular   hvr-pop" style="font-size: 40px;"></span></center>
       <h3>NOS CLIENTS FIDÈLES</h3>
     </div>
-
-    <div class="row team">
+<tbody id="myTable">
+   
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js
+				"></script>
+				<script>
+				$(document).ready(function(){
+				  $("#myInput").on("keyup", function() {
+					var value = $(this).val().toLowerCase();
+					$("#myTable tr").filter(function() {
+					  $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)
+					});
+				  });
+				});
+				</script>
+				<div class="input-group">
+					<br><br>	<p style="margin-left: 2.3em;padding: 0 0.09em 2.6em 0;border-width: 5px; border-color: #558B2F; border-style:solid;">	<input id="myInput" type="text"placeholder="Rechercher.." class="form-control"></p>
+										<br>
+									</div>
+			 <div class="row team">				  
         {% for s in sb %}
       <div class="col-sm-6 col-md-4">
         <div class="member">
@@ -303,11 +320,15 @@
           
         </div>
       </div>
-      {% endfor %}
+      {% endfor %} </tbody>
       </div>
    
       </div>
     </div>
+
+
+
+
 
 </section>
 
