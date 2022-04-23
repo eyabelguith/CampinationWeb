@@ -57,7 +57,7 @@
   <div class="navbar-collapse collapse" id="main-navbar">
      <ul class="nav navbar-nav">
  	<li class="dropdown">
- 		<a href="#">Home Pages <i class="fa fa-chevron-down nav-arrow"></i></a>
+ 		<a href="#">Gestion Sorties balade <i class="fa fa-chevron-down nav-arrow"></i></a>
  		<ul class="dropdown-menu">
  			<li><a href="home_default.html">Default Home Page</a></li>
  			<li><a href="home_slider.html">Image Slider Default</a></li>
@@ -67,7 +67,8 @@
  		</ul>
  	</li>
  	<li class="dropdown">
- 		<a href="#">Tour Pages</a>
+	  <a href="{{path('SS')}}">Gestion sorties sportif <i class="fa fa-chevron-down nav-arrow"></i></a>
+ 		
  		<ul class="dropdown-menu">
  			<li><a href="trip_grid_withsidebar.html">Tour List</a></li>
  			<li><a href="trip_detail.html">Tour Detail</a></li>
@@ -76,7 +77,8 @@
  		</ul>
  	</li>
  	<li class="dropdown">
- 		<a href="#" class="dropdown-toggle">Features</a>
+ 		
+		 <a href="{{path('VIP')}}">Gestion vip <i class="fa fa-chevron-down nav-arrow"></i></a>
  		<ul class="dropdown-menu">
  			<li><a href="colorscheme.html">Color Scheme</a></li>
  			<li><a href="iconfont.html">Icon Font</a></li>
@@ -84,7 +86,7 @@
  		</ul>
  	</li>
  	<li class="dropdown">
- 		<a href="#" class="dropdown-toggle">Blog</a>
+ 		<a href="#" class="dropdown-toggle">Gestion Magasin</a>
  		<ul class="dropdown-menu">
  			<li><a href="blog_list.html">Blog List</a></li>
  			<li><a href="blog_list2.html">Blog List Full Image</a></li>
@@ -93,7 +95,7 @@
  		</ul>
  	</li>
  	<li class="dropdown  megamenu">
- 		<a class="dropdown-toggle">Mega Menu</a>
+ 		<a class="dropdown-toggle">Gestion evenements</a>
  		<div class="dropdown-menu">
  			<div class="col-sm-3">
  				<h5 class="head">Home Variation</h5>
@@ -141,7 +143,7 @@
  		</div>
  	</li>
  	<li class="dropdown megamenu">
- 		<a href="#" class="dropdown-toggle">Elements</a>
+ 		<a href="#" class="dropdown-toggle">Gestion Users</a>
  		<div class="dropdown-menu">
  			<div class="col-sm-3">
  				<h5 class="head">Misc 1</h5>
@@ -188,7 +190,7 @@
  			</div> 			
  		</div>
  	</li>
- 	<li>  <a href="login_page.html"><span class="icon-user"></span>Sign In</a></li>
+ 	<li>  <a href="login_page.html"><span class="icon-user"></span>Admin</a></li>
  	<li class="dropdown">
  		<a href="cart_page.html"><span class="icon-minicart"></span><span class="badge badge-danger">3</span></a>
  		<ul class="dropdown-menu  dropdown-menu-right cart-menu">
@@ -267,21 +269,23 @@
                          <td>{{s.dateRetour|date}}</td>
                           <td>{{s.cint}}</td>
                          
-                            <td><a  href="{{ path('deletes',{'idSB':s.idSB}) }}" >Delete</a></td>
-<td><a  href="{{ path('UpSB',{'idSB':s.idSB}) }}" >modifier</a></td>
+                            <td><a href="{{path('deletes',{'idSB':s.idSB})}}"><span class="icon-trash hvr-pop" style="font-size: 40px;"></span></a></td>
+<td> <a href="{{path('UpSB',{'idSB':s.idSB})}}"><span class="icon-wrench-tilt hvr-pop" style="font-size: 40px;"></span></a></td>
 
-                  
-                    </tr {% endfor %}>
+              </tr {% endfor %}>
                     
                 </tbody>
             </table>
-        
+			<center>{{ knp_pagination_render(sb) }} </center>	
+
+  <h4><a href="{{ path('pdf') }}"  >imprimer</a></h4>
+      
 
 
    
 
 
-#}
+
 <section>
     <div class="showcase" style=" background: url('discover.moldthemes.com/assets/img/worldmap.png') no-repeat center; background-size: cover ">
     <div  class="container" >

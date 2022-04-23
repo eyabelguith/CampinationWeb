@@ -1,0 +1,71 @@
+
+
+{% block body%}
+
+<body style="   
+  background-size: 200px 200px;
+  background-color:#B2D6A2;" >
+   <img src="{{asset('/App/public/discover.moldthemes.com/assets/img/logo3.png')}}">
+ 
+   <h1 align="center" p style="color:#143406"> Liste des sorties balade :</h1></p>
+    
+
+   
+    <table  Border="1" style=" width:100%;  
+    font: 400 14px 'Calibri','Arial'; overflow: hidden;
+    max-width: 800px;
+    margin: 0 auto;
+    position: relative;" >
+        <thead>
+             <tr style="height: 60px;
+    background:#03663f;
+    font-size: 16px;">
+              
+                <tr>
+                <th><h4>Nom du sortie</h4></th>
+<th>reference de distination</th>
+<th>Date depart</th>
+<th>Date retour</th>
+<th>cin du transporteur </th>
+            
+        </thead>
+        <tbody>
+      {% for s in sb %}
+        
+            <tr style=" height: 60px;
+    font-size: 16px;" >
+            
+               <td>{{s.nomS}}</td>
+                        <td>{{s.idDestinationb}}</td>
+                        <td>{{s.dateDepart|date}}</td>
+                         <td>{{s.dateRetour|date}}</td>
+                          <td>{{s.cint}}</td>
+
+                   
+        {% endfor %}
+        </tbody>
+    </table>
+ 
+    <table width="100%" border="0" cellspacing="0" cellpadding >
+       
+        <tbody>
+      
+           
+                <h5>El Ghazela Ariana</h5>
+               <h5>(800) 265  216 2020</h5>
+                    <h5>Campination@gmail.com</h5>
+                     
+                
+               </tbody>
+
+   </table>
+   
+{% endblock %}
+
+        
+
+
+
+ 
+
+                </body> 

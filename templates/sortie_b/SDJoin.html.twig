@@ -247,30 +247,28 @@
                    
 
 <tr>
-<th>id_DestinationS</th>
-<th>date_depart</th>
-<th>date_retour</th>
-<th>cinT</th>
-<th>nom_S</th>
-</tr>
+<th>Nom du sortie</th>
+<th>reference de distination</th>
+<th>Date depart</th>
+<th>Date retour</th>
+<th>cin du transporteur </th>
 
  
+</tr>
+ 
   
   
  
  
-                    <tr {% for s in ss %}>   
-				
-                        <td>{{s.idDestinations}}</td>
+                    <tr {% for s in sb %}>   
+					<td>{{s.nomS}}</td>
+                        <td>{{s.idDestinationb}}</td>
                         <td>{{s.dateDepart|date}}</td>
                          <td>{{s.dateRetour|date}}</td>
-                           <td>{{s.cint}}</td>
-                             <td>{{s.typeSport}}</td>
-                          <td>{{s.cinco}}</td>
-                           <td>{{s.nomS}}</td>
+                          <td>{{s.nom}}</td>
                          
-                            <td><a  href="{{ path('deletes',{'idSB':s.idSS}) }}" >Delete</a></td>
-<td><a  href="{{ path('UpSS',{'idSB':s.idSS}) }}" >modifier</a></td>
+                            <td><a  href="{{ path('deletes',{'idSB':s.idSB}) }}" >Delete</a></td>
+<td><a  href="{{ path('UpSB',{'idSB':s.idSB}) }}" >modifier</a></td>
 
                   
                     </tr {% endfor %}>
@@ -380,43 +378,4 @@
 </body>
 
 
-</html>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+</html>*/

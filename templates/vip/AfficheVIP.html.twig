@@ -58,7 +58,7 @@
   <div class="navbar-collapse collapse" id="main-navbar">
      <ul class="nav navbar-nav">
  	<li class="dropdown">
- 		<a href="#">Home Pages <i class="fa fa-chevron-down nav-arrow"></i></a>
+ 		<a href="{{path('SB')}}">Gestion sorties balade<i class="fa fa-chevron-down nav-arrow"></i></a>
  		<ul class="dropdown-menu">
  			<li><a href="home_default.html">Default Home Page</a></li>
  			<li><a href="home_slider.html">Image Slider Default</a></li>
@@ -68,7 +68,7 @@
  		</ul>
  	</li>
  	<li class="dropdown">
- 		<a href="#">Tour Pages</a>
+ 		  <a href="{{path('SS')}}">Gestion sorties sportif <i class="fa fa-chevron-down nav-arrow"></i></a>
  		<ul class="dropdown-menu">
  			<li><a href="trip_grid_withsidebar.html">Tour List</a></li>
  			<li><a href="trip_detail.html">Tour Detail</a></li>
@@ -77,7 +77,7 @@
  		</ul>
  	</li>
  	<li class="dropdown">
- 		<a href="#" class="dropdown-toggle">Features</a>
+ 		<a href="#" class="dropdown-toggle">Gestion Vip</a>
  		<ul class="dropdown-menu">
  			<li><a href="colorscheme.html">Color Scheme</a></li>
  			<li><a href="iconfont.html">Icon Font</a></li>
@@ -85,7 +85,7 @@
  		</ul>
  	</li>
  	<li class="dropdown">
- 		<a href="#" class="dropdown-toggle">Blog</a>
+ 		<a href="#" class="dropdown-toggle">Gestion magasin</a>
  		<ul class="dropdown-menu">
  			<li><a href="blog_list.html">Blog List</a></li>
  			<li><a href="blog_list2.html">Blog List Full Image</a></li>
@@ -94,7 +94,7 @@
  		</ul>
  	</li>
  	<li class="dropdown  megamenu">
- 		<a class="dropdown-toggle">Mega Menu</a>
+ 		<a class="dropdown-toggle">Gestion Evenement</a>
  		<div class="dropdown-menu">
  			<div class="col-sm-3">
  				<h5 class="head">Home Variation</h5>
@@ -142,7 +142,7 @@
  		</div>
  	</li>
  	<li class="dropdown megamenu">
- 		<a href="#" class="dropdown-toggle">Elements</a>
+ 		<a href="#" class="dropdown-toggle">Gestion users</a>
  		<div class="dropdown-menu">
  			<div class="col-sm-3">
  				<h5 class="head">Misc 1</h5>
@@ -189,7 +189,7 @@
  			</div> 			
  		</div>
  	</li>
- 	<li>  <a href="login_page.html"><span class="icon-user"></span>Sign In</a></li>
+ 	<li>  <a href="login_page.html"><span class="icon-user"></span>Admin</a></li>
  	<li class="dropdown">
  		<a href="cart_page.html"><span class="icon-minicart"></span><span class="badge badge-danger">3</span></a>
  		<ul class="dropdown-menu  dropdown-menu-right cart-menu">
@@ -261,12 +261,14 @@
   <tbody>
   
  {% for s in sb %}
-                    <tr>    <td>{{s.nbpt}}</td>
+                    <tr>   
+				
+					 <td>{{s.nbpt}}</td>
                         <td>{{s.cin}}</td>
                          <td>{{s.nbSs}}</td>
                            <td>{{s.nbSB}}</td>
                          
-                            
+                         
                   
                     </tr>
                     {% endfor %}
@@ -283,6 +285,7 @@
     <div class="showcase" style=" background: url('discover.moldthemes.com/assets/img/worldmap.png') no-repeat center; background-size: cover ">
     <div  class="container" >
         <div class="section-title center">
+			<center><span class=" icon-binocular   hvr-pop" style="font-size: 40px;"></span></center>
       <h3>NOS CLIENTS FIDÈLES</h3>
     </div>
 
@@ -290,7 +293,7 @@
         {% for s in sb %}
       <div class="col-sm-6 col-md-4">
         <div class="member">
-         
+         	<td><span class=" icon-medal   hvr-pop" style="font-size: 40px;"></span></td>
 		 <td><h4 class="nombre">Cin de membre : [{{s.cin}}]</h4></td>
          <td><h4 class="nombre">Nbr sorties balade : [{{s.nbSS}}]</h4></td>
          <td><h4 class="nombre">Nbr des sorties sportif : [{{s.nbSB}}]</h4></td>
@@ -337,12 +340,101 @@
 	          speed: .3,
               parallax: true,
 			});
+
+
+{% block footer %}
+
+<footer id="footer">
+ <div class="container">
+  <div class="row">
+   <div class="col-sm-7 col-md-3">
+    <h3>Elite 2022</h3>
+    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Consequuntur, quia, architecto? A, reiciendis eveniet! Esse est eaque adipisci natus rerum laudantium accusamus magni.</p>
+   </div>
+   <div class="col-sm-5 col-md-2">
+    <h3>Quick Link</h3>
+    <ul>
+     <li>Forfait vacances</li>
+     <li>Aventure de rêve</li>
+     <li>Transportation</li>
+     <li>pêche et randonnée</li>
+    
+    </ul>
+   </div>
+   <div class="col-sm-7 col-md-4">
+    <h3>Newsletter Modifie</h3>
+    <p>Subscribe to our weekly newsletter to get news and update</p>
+    <br>
+    <div class="input-group">
+     <input type="text" class="form-control" placeholder="Your Email">
+     <div class="input-group-btn">
+      <button class="btn btn-primary">Subscribe</button>
+     </div>
+    </div>
+   </div>
+   <div class="col-sm-5 col-md-2">
+    <h3>Contact Info</h3>
+    <ul>
+     <li>Mold Discover</li>
+     <li>info@moldthemes.com</li>
+    </ul>
+    <div class="clearfix">
+     <div class="social-icon-list">
+      <ul>
+       <li><a href="https://twitter.com/moldthemes" class="icon-twitter"></a></li>
+       <li><a href="mailto:info@moldthemes.com" class="icon-mail"></a></li>
+      </ul>
+     </div>
+    </div>
+   </div>
+  </div>
+ </div>
+ <div class="copy"><span>&copy;</span> Copyright Mold Discover, 2017</div>
+</footer>
+
+
+{% endblock %}
+
+</section>
+
+<script src="{{asset('discover.moldthemes.com/vendor/jquery/dist/jquery.min.js')}}"></script>
+		<script src="{asset('discover.moldthemes.com/vendor/jqueryui/jquery-ui-1.10.3.custom.min.js')}}"></script>
+		<script src="{asset('discover.moldthemes.com/vendor/jquery.ui.touch-punch.min.js')}}"></script>
+		<script src="{asset('discover.moldthemes.com/vendor/bootstrap/dist/js/bootstrap.min.js')}}"></script>
+
+		<script src="{asset('discover.moldthemes.com/vendor/waypoints/lib/jquery.waypoints.min.js')}}"></script>
+		<script src="{asset('discover.moldthemes.com/vendor/owlcarousel/owl.carousel.min.js')}}"></script>
+		<script src="{asset('discover.moldthemes.com/vendor/retina.min.js')}}"></script>
+		<script src="{asset('discover.moldthemes.com/vendor/jquery.imageScroll.min.js')}}"></script>
+		<script src="{asset('discover.moldthemes.com/assets/js/min/responsivetable.min.js')}}"></script>
+		<script src="{asset('discover.moldthemes.com/assets/js/min/countnumbers.min.js')}}"></script>
+		<script src="{asset('discover.moldthemes.com/assets/js/main.js')}}"></script>
+
+		<link href="{asset('discover.moldthemes.com/assets/css/controlpanel.css')}}" rel="stylesheet">
+<link href="{asset('discover.moldthemes.com/vendor/colpick-jQuery-Color-Picker-master/css/colpick.css')}}" rel="stylesheet"  type="text/css" />
+<link href="{asset('discover.moldthemes.com/vendor/colorpicker/css/evol-colorpicker.min.css')}}" rel="stylesheet" type="text/css" />
+<script src="{asset('discover.moldthemes.com/vendor/colpick-jQuery-Color-Picker-master/js/colpick.js')}}"></script>
+<script src="{asset('discover.moldthemes.com/vendor/colorpicker/js/evol-colorpicker.min.js')}}"></script>
+<script src="{asset('discover.moldthemes.com/assets/js/controlpanel.js')}}"></script>
+
+		<!-- Current Page JS -->
+		<script type="text/javascript" src="{asset('discover.moldthemes.com/assets/js/min/index.min.js')}}"></script>
+
+
+		<script>
+			$('.parallax').imageScroll({
+	          speed: .3,
+              parallax: true,
+			});
 </script>
 {% endblock %}
 </body>
 
 
 </html>
+
+
+
 
 
 
