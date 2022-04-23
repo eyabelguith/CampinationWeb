@@ -11,7 +11,7 @@ use App\Entity\Sortiebalade;
 use App\Repository\SortiebaladeRepository;
 use Knp\Component\Pager\PaginatorInterface;
 
-
+use App\Notifications\NouveauPublicationNotification;
 use Symfony\Bridge\Doctrine\Logger\DbalLogger;
 use Symfony\Component\Serializer\Annotation\Groups;
 
@@ -28,7 +28,10 @@ use Symfony\Component\HttpFoundation\File\File;
 use Dompdf\Dompdf;
 use Dompdf\Options;
 
-
+use PHPMailer\PHPMailer\PHPMailer;
+use Swift_SmtpTransport;
+use Swift_Message;
+use Swift_Mailer;
 class SortieBController extends AbstractController
 {
     /**
@@ -126,8 +129,8 @@ return $this->redirectToRoute('AfficheSortieB');
             $em = $this->getDoctrine()->getManager();
             $em->persist($c);
             $em->flush();
-            
-
+            $this->notify_creation->notify();
+            $this->notify_creation->notify();
             return $this->redirectToRoute('SB');
         }
 
@@ -145,7 +148,7 @@ return $this->redirectToRoute('AfficheSortieB');
       $em=$this->getDoctrine()->getManager();
       $em->remove($sb);
       $em->flush(); 
-
+      $this->notify_creation->notify();
         return $this->redirectToRoute('SB');
        
     }
@@ -166,6 +169,7 @@ return $this->redirectToRoute('AfficheSortieB');
             $em=$this->getDoctrine()->getManager();
 
             $em->flush();
+            $this->notify_creation->notify();
             return $this->redirectToRoute('SB');
         }
 
@@ -186,6 +190,10 @@ return $this->redirectToRoute('AfficheSortieB');
         return $this->render('sortie_b/AfficheSB.html.twig', ['sb' => $sb]);
 
     }
+
+
+
+
 
 
 
@@ -234,7 +242,20 @@ return $this->redirectToRoute('AfficheSortieB');
 
 
 
+/**
+ * @var NouveauPublicationNotification
+ */
+private $notify_creation;
 
+/**
+ * PublicationController constructor.
+ * @param NouveauPublicationNotification $notify_creation
+ */
+public function __construct(NouveauPublicationNotification $notify_creation)
+{
+    $this->notify_creation = $notify_creation;
+    
+}
 
 
 }
