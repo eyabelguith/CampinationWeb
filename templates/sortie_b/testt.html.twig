@@ -1,0 +1,28 @@
+    <table>
+<tr>
+<th>Nom du sortie</th>
+<th>reference de distination</th>
+<th>Date depart</th>
+<th>Date retour</th>
+<th>cin du transporteur </th>
+
+ 
+</tr>
+ 
+  
+  
+ 
+ 
+                    <tr {% for s in sb %}>   
+					<td>{{s.nomS}}</td>
+                        <td>{{s.idDestinationb}}</td>
+                        <td>{{s.dateDepart|date}}</td>
+                         <td>{{s.dateRetour|date}}</td>
+                          <td>{{s.cint}}</td>
+                         
+                            
+              </tr {% endfor %}>
+                    
+               
+            </table>
+            <a href="{{path('Trie') }}"><i class="align-middle"></i> TRIER ASCENDANT : Date</a>    
