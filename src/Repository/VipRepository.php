@@ -73,4 +73,25 @@ class VipRepository extends ServiceEntityRepository
         ;
     }
     */
+
+
+
+    /*public function calc(int $nbPt): array
+    {
+        $entityManager = $this->getEntityManager();
+
+        $query = $entityManager->createQuery(
+            'SELECT nbSs+nbSb p
+            FROM App\Entity\Camper p
+            WHERE p.cin = :cin
+            '
+        )->setParameter('nbPt', $nbPt);
+
+        return $query->getResult();
+    }*/
+
+
+
+
+
 }

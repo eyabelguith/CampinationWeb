@@ -24,7 +24,7 @@ class Vip
     /**
      * @var int
      *
-     * @ORM\Column(name="nb_pt", type="integer", nullable=false)
+     * @ORM\Column(name="nb_pt", type="integer", nullable=true)
      */
     private $nbPt;
 

@@ -84,4 +84,21 @@ class SortiebaladeRepository extends ServiceEntityRepository
     ->getQuery()
     ->getResult();
     }
+
+
+
+
+    public function findByDate()
+    {
+        return $this->createQueryBuilder('sss')
+            ->orderBy('sss.nomS','ASC')
+            ->getQuery()
+            ->getResult()
+            ;
+    }
+
+
+
+
+    
 }

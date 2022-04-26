@@ -206,9 +206,11 @@ return $this->redirectToRoute('AfficheSortieB');
     {
         // Configure Dompdf according to your needs
         $pdfOptions = new Options();
+        
         $pdfOptions->set('defaultFont', 'Arial');
         $pdfOptions->set('isRemoteEnabled', true);
-        
+       
+$dompdf = new Dompdf($pdfOptions);
         $rep=$this->getDoctrine()->getRepository(Sortiebalade::class);
         
         $sb =$rep->findAll();
@@ -258,4 +260,20 @@ public function __construct(NouveauPublicationNotification $notify_creation)
 }
 
 
+
+/**
+     * @Route("/Trie", name="Trie")
+     */
+    public function Trie(Request $request)
+    {
+        $repository = $this->getDoctrine()->getRepository(Sortiebalade::class);
+        $sortiebalade = $repository->findByDate();
+
+        return $this->render('sortie_b/afficheSB.html.twig', [
+            'sb' =>  $sortiebalade,
+        ]);
+    }
+
+
+  
 }
