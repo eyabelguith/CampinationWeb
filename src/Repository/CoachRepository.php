@@ -45,6 +45,17 @@ class CoachRepository extends ServiceEntityRepository
         }
     }
 
+    
+    public function  showByTypeSport($typeSport)
+    {
+        return $this->createQueryBuilder('r')
+            ->where('r.typeSport like :typeSport')
+            ->setParameter('typeSport', '%'.$typeSport.'%')
+            ->getQuery()
+            ->getResult()
+        ;
+    }
+
     // /**
     //  * @return Coach[] Returns an array of Coach objects
     //  */

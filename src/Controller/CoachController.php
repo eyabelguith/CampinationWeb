@@ -4,7 +4,7 @@ namespace App\Controller;
 use App\Entity\Coach;
 
 use App\Repository\CoachRepository;
-
+use Symfony\Component\HttpFoundation\JsonResponse ;
 use App\Form\CoachType;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Response;
@@ -30,6 +30,18 @@ class CoachController extends AbstractController
     public function AfficheListCoach(CoachRepository $repo){
 
         $coachs = $repo->findAll();
+        return $this->render('coach/ListCoach.html.twig', ['coach' => $coachs]);
+
+
+
+    } 
+        
+    /**
+     * @Route("/Listcoach2", name="Listcoach2")
+     */
+    public function AfficheListCoach2(CoachRepository $repo){
+
+        $coachs = $repo->showByTypeSport($typeSport);
         return $this->render('coach/ListCoach.html.twig', ['coach' => $coachs]);
 
 
@@ -106,5 +118,33 @@ class CoachController extends AbstractController
         }
         return $this->render("coach/updateCoach.html.twig",array('form'=>$form->createView()));
     }
+/**
+  
+   * @Route("/search", name="ajax_search")
+  
+   */
+  public function searchAction(Request $request)
+  {
+      $em = $this->getDoctrine()->getManager();
 
+      $requestString = $request->get('q');
+
+      $entities =  $em->getRepository(Coach::class)->showByTypeSport($requestString);
+
+      if(!$entities) {
+          $result['entities']['error'] = "Pas de coach";
+      } else {
+          $result['entities'] = $this->getRealEntities($entities);
+      }
+
+      return new Response(json_encode($result));
+  }
+  public function getRealEntities($entities){
+
+    foreach ($entities as $entity){
+        $realEntities[$entity->getNom()] = $entity->getNom();
+    }
+
+    return $realEntities;
+}
 }

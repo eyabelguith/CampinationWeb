@@ -62,7 +62,7 @@ class CamperType extends AbstractType
             ->add('sexe',ChoiceType::class,[
                 'choices'  => [
                 'Genre' => null,
-                'expanded'=>false,
+                
                 ' Homme'=>' Homme',
                 'Femme'=> 'Femme',
                 

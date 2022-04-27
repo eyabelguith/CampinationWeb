@@ -1,0 +1,9 @@
+# config/packages/vich_uploader.yaml
+vich_uploader:
+    db_driver: orm
+
+
+    mappings:
+        user_images:
+            uri_prefix:         'C:\wamp64\www\CampinationApp\public\images'
+            upload_destination: 'C:\wamp64\www\CampinationApp\public\images'

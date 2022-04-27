@@ -6,6 +6,7 @@ use App\Repository\CamperRepository;
 use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\Common\Collections\Collection;
 use Doctrine\ORM\Mapping as ORM;
+
 use Symfony\Component\HttpFoundation\File\File;
 use Symfony\Component\Validator\Constraints\Image;
 use Symfony\Bridge\Doctrine\Validator\Constraints\UniqueEntity;
@@ -45,6 +46,7 @@ class Camper
 
     /**
      * @var string
+
      *@Assert\NotBlank(message="Vueillez remplir le champ")
      * @ORM\Column(name="num_Tel", type="string", length=10, nullable=false)
      */
@@ -94,6 +96,7 @@ class Camper
 
     /**
      * @var int
+
      *@Assert\NotBlank(message="Vueillez remplir le champ")
      * @ORM\Column(name="cin", type="integer", nullable=false)
      */
@@ -116,6 +119,7 @@ class Camper
      */
     private $image;
     
+    
     /**
      * @var int
      *
@@ -123,6 +127,10 @@ class Camper
      */
     
     private $nbSs;
+     /**
+     * @ORM\Column(type="string", length=255, nullable=true)
+     */
+    private $etat;
 
     /**
      * @var int
@@ -140,6 +148,46 @@ class Camper
      * @ORM\ManyToMany(targetEntity=Sortiesportif::class)
      */
     private $sortieS;
+
+    /**
+     * @ORM\Column(name="role",type="json",nullable=true)
+     */
+    private $role = [];
+
+     /**
+     * @ORM\Column(type="string", length=255,nullable=true)
+     */
+    private $activation_token;
+
+    /**
+     * @ORM\Column(type="string", length=255,nullable=true)
+     */
+    private $reset_token;
+
+ 
+    public function getActivationToken(): ?string
+    {
+        return $this->activation_token;
+    }
+
+    public function setActivationToken(string $activation_token): self
+    {
+        $this->activation_token = $activation_token;
+
+        return $this;
+    }
+
+    public function getResetToken(): ?string
+    {
+        return $this->reset_token;
+    }
+
+    public function setResetToken(string $reset_token): self
+    {
+        $this->reset_token = $reset_token;
+
+        return $this;
+    }
 
     public function getImage()
     {
@@ -187,7 +235,36 @@ class Camper
 
         return $this;
     }
+    public function getEtat(): ?string
+    {
+        return $this->etat;
+    }
 
+    public function setEtat(string $etat): self
+    {
+        $this->etat = $etat;
+
+        return $this;
+    }
+
+    /**
+     * @see UserInterface
+     */
+    public function getRole(): array
+    {
+        $role = $this->role;
+        // guarantee every user at least has ROLE_USER
+        $role[] = 'ROLE_CAMPER';
+
+        return array_unique($role);
+    }
+
+    public function setRole(array $role): self
+    {
+        $this->role = $role;
+
+        return $this;
+    }
     public function getNumTel(): ?string
     {
         return $this->numTel;
@@ -296,18 +373,7 @@ class Camper
         return $this;
     }
 
-    public function getRole(): ?string
-    {
-        $role = $this->role;
-     
-    }
 
-    public function setRole(?string $role): self
-    {
-        $this->role = $role;
-
-        return $this;
-    }
 
     public function getNbSs(): ?int
     {

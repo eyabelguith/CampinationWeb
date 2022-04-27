@@ -73,5 +73,34 @@ class TransporteurRepository extends ServiceEntityRepository
         ;
     }
     */
-
+    public function findByNom()
+    {
+        return $this->createQueryBuilder('t')
+            ->orderBy('t.nom','ASC')
+            ->getQuery()
+            ->getResult()
+            ;
+    }
+    public function findByCapacite()
+    {
+        return $this->createQueryBuilder('t')
+            ->orderBy('t.capacite','DESC')
+            
+            ->getQuery()
+            ->getResult()
+            ;
+    }
+    public function getAllTeamsSortedByDescBudget()     {   
+              $q = $this->createQueryBuilder('t')
+              ->orderBy('t.budget', 'DESC');     
+             return $q->getQuery()->getResult();     }
+    public function  showByDispo()
+    {
+        return $this->createQueryBuilder('t')
+            ->where('t.disponibilite LIKE :d')
+            ->setParameter('d', 'Oui')
+            ->getQuery()
+            ->getResult()
+        ;
+    }
 }

@@ -73,7 +73,14 @@ class CamperRepository extends ServiceEntityRepository
         ;
     }
     */
-
+    public function findByNom()
+    {
+        return $this->createQueryBuilder('c')
+            ->orderBy('c.nom','ASC')
+            ->getQuery()
+            ->getResult()
+            ;
+    }
 
 
 }
